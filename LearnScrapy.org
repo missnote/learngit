@@ -1,0 +1,168 @@
+* 初窥scrapy
+** 选择一个网站，http://www.mininova.org/today
+** 定义要抓取的数据
+#+BEGIN_SRC python
+
+import scrapy
+class TorrentItem(scrapy.Item):
+    url = scrapy.Field()
+    name = scrapy.Field()
+    description = scrapy.Field()
+    size = scrapy.Field()
+
+#+END_SRC
+
+** spider code
+#+BEGIN_SRC python
+from scrapy.contrib.spiders import CrawlSpider, Rule
+from scrapy.contrib.linkextractors import LinkExtractor
+
+class MininovaSpider(CrawlSpider):
+
+    name = 'mininova'
+    allowed_domains = ['mininova.org']
+    start_urls = ['http://www.mininova.org/today']
+    rules = [Rule(LinkExtractor(allow=['/tor/\d+']), 'parse_torrent')]
+
+    def parse_torrent(self, response):
+        torrent = TorrentItem()
+        torrent['url'] = response.url
+        torrent['name'] = response.xpath("//h1/text()").extract()
+        torrent['description'] = response.xpath("//div[@id='description']").extract()
+        torrent['size'] = response.xpath("//div[@id='info-left']/p[2]/text()[2]").extract()
+        return torrent
+#+END_SRC
+** 执行spider，获取数据
+scrapy crawl mininova -o scrapy_data.json
+** 查看提取的数据
+emacs scrapy_data.json
+
+* 安装指南
+** 安装scrapy
+pip install scrapy
+
+* scrapy 入门教程
+** 创建一个scrapy项目
+scrapy startproject tutorial
+#+BEGIN_SRC 项目tree
+tutorial/
+    scrapy.cfg
+    tutorial/
+        __init__.py
+        items.py
+        pipelines.py
+        settings.py
+        spiders/
+            __init__.py
+            ...
+#+END_SRC
+scrapy.cfg:项目配置文件
+tutorial/项目Python模块，在此添加代码
+tutorial/items.py:项目中的item文件
+tutorial/pipelines.py:项目中的pipeline文件
+tutorial/settings.py:项目中的配置文件
+tutorial/spiders:放置spider代码
+** 定义爬取的item
+编辑tutorial目录中的items.py
+#+BEGIN_SRC python
+import scrapy
+
+class DmozItem(scrapy.Item):
+    title = scrapy.Field()
+    link = scrapy.Field()
+    desc = scrapy.Field()
+#+END_SRC
+** 编写spider并提取item
+spider必须继承scrapy.Spider,定义以下三个属性
+name:用于区别spider，name唯一。
+start_urls:包含爬取的URL列表。
+parse():spider的一个方法，负责解析返回的数据，提取数据，以及生成进一步处理的URL对象
+新建文件，保存在tutorial/spiders目录下，dmoz_spider.py
+#+BEGIN_SRC python
+import scrapy
+
+class DmozSpider(scrapy.spiders.Spider):
+    name = "dmoz"
+    allowed_domains = ["dmoz.org"]
+    start_urls = [
+        "http://www.dmoz.org/Computers/Programming/Languages/Python/Books/",
+        "http://www.dmoz.org/Computers/Programming/Languages/Python/Resources/"
+    ]
+
+    def parse(self, response):
+        filename = response.url.split("/")[-2]
+        with open(filename, 'wb') as f:
+            f.write(response.body)
+#+END_SRC
+*** 爬取
+scrapy crawl dmoz
+*** 提取item
+scrapy使用xpath和css表达式机制
+example：
+/html/head/title:选择HTML文档中head标签内的title元素
+/html/head/title/text():上面title元素的文字
+//td:选择所有的td元素
+//div[@class='mine']:选择所有的具有class=‘mine’的div元素
+www.w3school.com.cn/xpath/index.asp
+*** selectors选择器
+xpath():传入xpath表达式，返回节点list
+css():传入css表达式，返回节点list
+extract():序列化改节点为Unicode字符，返回list
+re():根据正则表达式对数据进行提取，返回Unicode list
+
+*** 提取数据
+在终端输入response.body查看HTML
+#+BEGIN_SRC python
+sel.xpath('//ul/li')
+sel.xpath('//ul/li/text()').extract()
+for sel in response.xpath('//ul/li'):
+    title = sel.xpath('a/text()').extract()
+    link = sel.xpath('a/@href').extract()
+    desc = sel.xpath('text()').extract()
+    print title, link, desc
+#+END_SRC
+#+BEGIN_SRC python
+import scrapy
+
+class DmozSpider(scrapy.Spider):
+    name = "dmoz"
+    allowed_domains = ["dmoz.org"]
+    start_urls = [
+        "http://www.dmoz.org/Computers/Programming/Languages/Python/Books/",
+        "http://www.dmoz.org/Computers/Programming/Languages/Python/Resources/"
+    ]
+
+    def parse(self, response):
+        for sel in response.xpath('//ul/li'):
+            title = sel.xpath('a/text()').extract()
+            link = sel.xpath('a/@href').extract()
+            desc = sel.xpath('text()').extract()
+            print title, link, desc
+#+END_SRC
+** 使用item
+#+BEGIN_SRC python
+import scrapy
+
+from tutorial.items import DmozItem
+
+class DmozSpider(scrapy.Spider):
+    name = "dmoz"
+    allowed_domains = ["dmoz.org"]
+    start_urls = [
+        "http://www.dmoz.org/Computers/Programming/Languages/Python/Books/",
+        "http://www.dmoz.org/Computers/Programming/Languages/Python/Resources/"
+    ]
+
+    def parse(self, response):
+        for sel in response.xpath('//ul/li'):
+            item = DmozItem()
+            item['title'] = sel.xpath('a/text()').extract()
+            item['link'] = sel.xpath('a/@href').extract()
+            item['desc'] = sel.xpath('text()').extract()
+            yield item
+#+END_SRC
+** 编写item pipeline来保存获取到的数据
+保存爬取到的数据
+#+BEGIN_SRC python
+scrapy crawl dmoz -o items.json
+#+END_SRC
