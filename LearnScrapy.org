@@ -166,3 +166,210 @@ class DmozSpider(scrapy.Spider):
 #+BEGIN_SRC python
 scrapy crawl dmoz -o items.json
 #+END_SRC
+* 命令行工具
+** 默认的scrapy的结构
+#+BEGIN_SRC scrapy
+scrapy.cfg
+myproject/
+    __init__.py
+    items.py
+    pipelines.py
+    settings.py
+    spiders/
+        __init__.py
+        spider1.py
+        spider2.py
+        ...
+#+END_SRC
+** 使用scrapy工具
+#+BEGIN_SRC scrapy
+Scrapy 1.3.0 - no active project
+
+Usage:
+  scrapy <command> [options] [args]
+
+Available commands:
+  bench         Run quick benchmark test
+  commands
+  fetch         Fetch a URL using the Scrapy downloader
+  genspider     Generate new spider using pre-defined templates
+  runspider     Run a self-contained spider (without creating a project)
+  settings      Get settings values
+  shell         Interactive scraping console
+  startproject  Create new project
+  version       Print Scrapy version
+  view          Open URL in browser, as seen by Scrapy
+
+  [ more ]      More commands available when run from project directory
+
+Use "scrapy <command> -h" to see more info about a command
+#+END_SRC
+** 创建项目
+scrapy startproject myproject
+cd myproject
+然后可以使用scrapy命令来控制项目
+
+** 控制项目
+创建一个新的spider：scrapy genspider mydomain mydomain.com
+** 可用的scrapy命令
+scrapy<command> -h
+*** 全局命令：
+startproject,settings,runspider,shell,fetch,view,version
+*** 项目命令：
+crawl,check,list,edit,parse,genspider,deploy,bench
+
+*** genspider
+在项目中创建spider
+scrapy genspider [-t template] <name> <domain>
+查看模板：scrapy genspider -l
+查看详细信息：scrapy genspider -d basic
+使用模板：scrapy genspider -t basic example example.com
+*** crawl
+语法：scrapy crawl <spider>
+*** check
+scrapy check [-l] <spider>
+*** list
+列出所有的spider：scrapy list
+*** fetch
+scrapy fetch url
+scrapy fetch --nolog --headers https://www.baidu.com
+*** view
+在浏览器打开给定的URL
+scrapy view url
+*** settings
+scrapy settings --get BOT_NAME
+scrapy settings --get DOWNLOAD_DELAY
+*** runspider
+scrapy runspider <spider_file.py>
+运行一个为创建项目的spider
+*** version
+scrapy version -v
+Scrapy    : 1.3.0
+lxml      : 3.7.1.0
+libxml2   : 2.9.4
+cssselect : 1.0.1
+parsel    : 1.1.0
+w3lib     : 1.16.0
+Twisted   : 16.6.0
+Python    : 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [MSC v.1900 64 bit (AMD64)]
+pyOpenSSL : 16.2.0 (OpenSSL 1.0.2k  26 Jan 2017)
+Platform  : Windows-7-6.1.7601-SP1
+*** deploy
+scrapy deploy [ <target:project> | -l <target> | -L ]
+*** bench
+scrapy bench
+运行benchmark测试
+* Items
+Item 对象是种简单的容器，保存了爬取到得数据。 其提供了 类似于词典(dictionary-like) 的API以及用于声明可用字段的简单语法
+** 声明item
+#+BEGIN_SRC python items declear
+import scrapy
+
+class Product(scrapy.Item):
+    name = scrapy.Field()
+    price = scrapy.Field()
+    stock = scrapy.Field()
+    last_updated = scrapy.Field(serializer=str)
+#+END_SRC
+** 与Item配合
+*** 创建item
+#+BEGIN_SRC python
+product = Product(name='Desktop PC', price=1000)
+print product
+Product(name='Desktop PC', price=1000)
+#+END_SRC
+*** 获取字段的值
+#+BEGIN_SRC python
+product['name']
+Desktop PC
+product.get('name')
+Desktop PC
+
+product['price']
+1000
+
+product['last_updated']
+Traceback (most recent call last):
+    ...
+KeyError: 'last_updated'
+
+product.get('last_updated', 'not set')
+not set
+
+product['lala'] # getting unknown field
+Traceback (most recent call last):
+    ...
+KeyError: 'lala'
+
+product.get('lala', 'unknown field')
+'unknown field'
+
+'name' in product  # is name field populated?
+True
+
+'last_updated' in product  # is last_updated populated?
+False
+
+'last_updated' in product.fields  # is last_updated a declared field?
+True
+
+'lala' in product.fields  # is lala a declared field?
+False
+
+#+END_SRC
+*** 设置字段的值
+#+BEGIN_SRC python
+product['last_updated'] = 'today'
+product['last_updated']
+today
+
+product['lala'] = 'test' # setting unknown field
+Traceback (most recent call last):
+    ...
+KeyError: 'Product does not support field: lala'
+#+END_SRC
+*** 获取所有获取的值
+product.keys()
+product.items()
+** 其他任务
+*** 复制item
+product2 = Product(product)
+product3 = product2.copy()
+*** 根据item创建字典
+dict(product)
+*** 根据字典创建item
+Product({'name':'niuniu','price':'expensive'})
+Product({'name':'niuniu','lala':'expensive'})#error
+** 扩展item
+继承原始的item来扩展item
+#+BEGIN_SRC python
+class DiscountedProduct(Product):
+    discount_percent = scrapy.Field(serializer=str)
+    discount_expiration_date = scrapy.Field()
+#+END_SRC
+* spiders
+定义爬取动作，分析网页的地方
+spider中初始的request是通过调用 start_requests() 来获取的。
+start_requests() 读取 start_urls 中的URL， 并以 parse 为回调函数生成 Request 。
+** spider参数
+在运行crawl时，添加-a可以传递spider参数：
+scrapy crawl myspider -a category=electronics
+spider在构造中获取参数
+#+BEGIN_SRC python
+import scrapy
+
+class MySpider(Spider):
+    name = 'myspider'
+
+    def __init__(self, category=None, *args, **kwargs):
+        super(MySpider, self).__init__(*args, **kwargs)
+        self.start_urls = ['http://www.example.com/categories/%s' % category]
+        # ...
+#+END_SRC
+** 内置spider参考手册
+*** spider
+Spider并没有提供什么特殊的功能。 其仅仅请求给定的 start_urls/start_requests，
+并根据返回的结果(resulting responses)调用spider的 parse 方法。
+name:定义spider名字的字符串，唯一。
+allowed_domains:允许爬取的域名列表
+start_urls:url列表，没有特定的URL时，从该列表开始爬取。
