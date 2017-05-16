@@ -23,9 +23,7 @@ set clipboard+=unnamed
 set backspace=2
 set ai!
 set relativenumber
-set nowrapscan
 set autochdir
-set cmdheight=2
 set wildmenu
 set nobackup
 set noundofile
