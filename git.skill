@@ -1,0 +1,68 @@
+配置GIT的用户信息
+```
+git config --global user.name ''
+git config --global user.email ''
+git config --global core.editor emacs || gvim
+```
+
+检查配置信息
+```
+git config --list
+git config <key>
+```
+
+使用帮助
+```
+git help <verb>
+git <verb> --help
+man git-<verb>
+git help config
+```
+
+初始化仓库
+```
+git init
+git clone <url>
+```
+
+修改和提交
+```
+git status
+git diff
+git add -A -v
+git add .
+git add <file>
+git mv <old> <new>
+git rm <file>
+git rm --cached <file>
+git commit -m "message"
+git commit --amend
+```
+
+忽略文件
+```
+.gitignore规则
+空行#开头会被忽略
+glob正则匹配
+[abc],*,?[0-9],a/**/z
+!取反
+
+*.a
+!lib.a
+/TODO
+build/
+doc/*.*
+doc/**/.*
+```
+
+查看历史
+```
+git log
+git log -p -n
+git log --stat
+git log --pretty=oneline
+git log --pretty=format:""
+git log --graph
+git log --abbrev-commit
+git log --since,--after,--until,--before,--author,--grep,--committer
+```
