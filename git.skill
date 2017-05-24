@@ -66,3 +66,48 @@ git log --graph
 git log --abbrev-commit
 git log --since,--after,--until,--before,--author,--grep,--committer
 ```
+
+撤销操作
+```
+git commit --amend -m 'new message'
+git reset HEAD <file>
+git checkout --<file>
+```
+
+远程仓库使用
+```
+git remote
+git remote -v
+git remote add <shortname> <url>
+git fetch <remote-name>
+git push [origin] [master]
+git remote show [origin]
+git remote rename <old> <new>
+git remote rm <remote-name>
+```
+
+打标签
+```
+git tag
+git tag -l "[v1***]"
+git tag -a v1.1 -m"message"
+git tag -a v1.1-lw
+git tag -a v1.2 <hash>
+git push origin v1.2
+git push origin --tags
+```
+
+git别名
+```
+git config --global alias.co checkout
+git config --global alias.last "log -1 HEAD"
+```
+
+GIT分支
+```
+git branch <name>
+git checkout -b <name>
+git merge <name>
+git branch -d <name>
+git mergetool
+```
