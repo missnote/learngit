@@ -71,7 +71,11 @@ git log --since,--after,--until,--before,--author,--grep,--committer
 ```
 git commit --amend -m 'new message'
 git reset HEAD <file>
-git checkout --<file>
+git checkout -- <file>
+git reset HEAD <file>
+git reset HEAD^
+git reset <hash>
+git revert HEAD
 ```
 
 远程仓库使用
@@ -95,6 +99,8 @@ git tag -a v1.1-lw
 git tag -a v1.2 <hash>
 git push origin v1.2
 git push origin --tags
+git tag -d v1.1
+git push origin :refs/tags/v1.2
 ```
 
 git别名
@@ -105,9 +111,13 @@ git config --global alias.last "log -1 HEAD"
 
 GIT分支
 ```
-git branch <name>
+git branch --no-ff <name>
 git checkout -b <name>
 git merge <name>
 git branch -d <name>
 git mergetool
+git branch 
+git branch -v
+git branch --merged
+git branch --no-merged
 ```
