@@ -121,3 +121,22 @@ git branch -v
 git branch --merged
 git branch --no-merged
 ```
+
+GIT远程分支
+```
+git ls-remote
+git remote show [remote]
+git fetch [origin]
+git push [origin][branch]
+git checkout --track origin/master
+git branch -vv
+git push origin --delete [name]
+```
+
+GIT变基操作
+```
+git rebase master
+git rebase master server
+git rebase --onto master server client
+git pull --rebase
+```
