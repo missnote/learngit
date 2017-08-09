@@ -1,0 +1,1335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-05-27 周六 11:15 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title></title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org2439d36">1. 初窥scrapy</a>
+<ul>
+<li><a href="#orgdea4a6d">1.1. 选择一个网站，</a></li>
+<li><a href="#org9bffd81">1.2. 定义要抓取的数据</a></li>
+<li><a href="#orgbd949f8">1.3. spider code</a></li>
+<li><a href="#org0a89cff">1.4. 执行spider，获取数据</a></li>
+<li><a href="#orga30b2b3">1.5. 查看提取的数据</a></li>
+</ul>
+</li>
+<li><a href="#orgd6bcdc4">2. 安装指南</a>
+<ul>
+<li><a href="#org8295931">2.1. 安装scrapy</a></li>
+</ul>
+</li>
+<li><a href="#org50891f4">3. scrapy 入门教程</a>
+<ul>
+<li><a href="#orgfdb9240">3.1. 创建一个scrapy项目</a></li>
+<li><a href="#org8cd3371">3.2. 定义爬取的item</a></li>
+<li><a href="#orgc89e65d">3.3. 编写spider并提取item</a>
+<ul>
+<li><a href="#org49dd864">3.3.1. 爬取</a></li>
+<li><a href="#org88395f5">3.3.2. 提取item</a></li>
+<li><a href="#orgbd2823a">3.3.3. selectors选择器</a></li>
+<li><a href="#org10cf47d">3.3.4. 提取数据</a></li>
+</ul>
+</li>
+<li><a href="#org3b813eb">3.4. 使用item</a></li>
+<li><a href="#org3dd7856">3.5. 编写item pipeline来保存获取到的数据</a></li>
+</ul>
+</li>
+<li><a href="#org9b8f759">4. 命令行工具</a>
+<ul>
+<li><a href="#org9fac3a0">4.1. 默认的scrapy的结构</a></li>
+<li><a href="#org1682411">4.2. 使用scrapy工具</a></li>
+<li><a href="#org6f90ec9">4.3. 创建项目</a></li>
+<li><a href="#org3da1215">4.4. 控制项目</a></li>
+<li><a href="#org4b73d96">4.5. 可用的scrapy命令</a>
+<ul>
+<li><a href="#org2e1979a">4.5.1. 全局命令：</a></li>
+<li><a href="#org81cfbf7">4.5.2. 项目命令：</a></li>
+<li><a href="#org79837f9">4.5.3. genspider</a></li>
+<li><a href="#orgba668ac">4.5.4. crawl</a></li>
+<li><a href="#orgf575225">4.5.5. check</a></li>
+<li><a href="#org8bb4ec1">4.5.6. list</a></li>
+<li><a href="#org53150c5">4.5.7. fetch</a></li>
+<li><a href="#org3da4cea">4.5.8. view</a></li>
+<li><a href="#orgc2678f5">4.5.9. settings</a></li>
+<li><a href="#orgae24858">4.5.10. runspider</a></li>
+<li><a href="#org105bc79">4.5.11. version</a></li>
+<li><a href="#orgd943feb">4.5.12. deploy</a></li>
+<li><a href="#orga1f8f15">4.5.13. bench</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org288783e">5. Items</a>
+<ul>
+<li><a href="#org6ebb895">5.1. 声明item</a></li>
+<li><a href="#org10429ae">5.2. 与Item配合</a>
+<ul>
+<li><a href="#org552a7ac">5.2.1. 创建item</a></li>
+<li><a href="#orga380b1b">5.2.2. 获取字段的值</a></li>
+<li><a href="#orgf0eb787">5.2.3. 设置字段的值</a></li>
+<li><a href="#orge8be8d6">5.2.4. 获取所有获取的值</a></li>
+</ul>
+</li>
+<li><a href="#orgd2a035d">5.3. 其他任务</a>
+<ul>
+<li><a href="#org332f063">5.3.1. 复制item</a></li>
+<li><a href="#org61686e6">5.3.2. 根据item创建字典</a></li>
+<li><a href="#org2ced5fe">5.3.3. 根据字典创建item</a></li>
+</ul>
+</li>
+<li><a href="#orgde54011">5.4. 扩展item</a></li>
+</ul>
+</li>
+<li><a href="#org6e37ef3">6. spiders</a>
+<ul>
+<li><a href="#org9c1ed2c">6.1. spider参数</a></li>
+<li><a href="#org29b57a2">6.2. 内置spider参考手册</a>
+<ul>
+<li><a href="#org96e61f2">6.2.1. spider</a></li>
+<li><a href="#orgf6d7a2c">6.2.2. custom<sub>settings</sub></a></li>
+<li><a href="#orgbb44399">6.2.3. crawler</a></li>
+<li><a href="#org4a9c8eb">6.2.4. start<sub>requests</sub>()</a></li>
+<li><a href="#org5f77bdd">6.2.5. parse(response)</a></li>
+<li><a href="#org541eb30">6.2.6. log()</a></li>
+<li><a href="#orgc4ee2ef">6.2.7. closed()</a></li>
+</ul>
+</li>
+<li><a href="#org8f5e0f3">6.3. spider样例</a></li>
+<li><a href="#org5e1052b">6.4. crawlspider样例</a></li>
+<li><a href="#org80c6bf9">6.5. XMLFeedSpider</a></li>
+<li><a href="#orgf9cee0d">6.6. CSVFeedSpider</a></li>
+</ul>
+</li>
+<li><a href="#org44eca2b">7. 选择器</a>
+<ul>
+<li><a href="#org8f16252">7.1. 使用选择器</a></li>
+<li><a href="#org7d091dd">7.2. 嵌套选择器</a></li>
+<li><a href="#org93d49f7">7.3. 正则表达式</a></li>
+<li><a href="#org1d11ade">7.4. 使用相对路径</a></li>
+<li><a href="#orga42f9eb">7.5. 使用建议</a>
+<ul>
+<li><a href="#org717c253">7.5.1. Using text nodes in a condition</a></li>
+<li><a href="#org29a1cd9">7.5.2. Beware the difference between //node[1] and (//node)[1]</a></li>
+<li><a href="#org734d9e2">7.5.3. When querying by class, consider using CSS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org1d3c969">8. Item Loaders</a>
+<ul>
+<li><a href="#org7d0dcfd">8.1. Using Item Loaders to populate items</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="org2439d36" class="outline-2">
+<h2 id="org2439d36"><span class="section-number-2">1</span> 初窥scrapy</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="orgdea4a6d" class="outline-3">
+<h3 id="orgdea4a6d"><span class="section-number-3">1.1</span> 选择一个网站，<a href="http://www.mininova.org/today">http://www.mininova.org/today</a></h3>
+</div>
+<div id="org9bffd81" class="outline-3">
+<h3 id="org9bffd81"><span class="section-number-3">1.2</span> 定义要抓取的数据</h3>
+<div class="outline-text-3" id="text-1-2">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">import</span> scrapy
+<span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">TorrentItem</span>(scrapy.Item):
+    <span style="color: #268bd2;">url</span> = scrapy.Field()
+    <span style="color: #268bd2;">name</span> = scrapy.Field()
+    <span style="color: #268bd2;">description</span> = scrapy.Field()
+    <span style="color: #268bd2;">size</span> = scrapy.Field()
+</pre>
+</div>
+</div>
+</div>
+
+<div id="orgbd949f8" class="outline-3">
+<h3 id="orgbd949f8"><span class="section-number-3">1.3</span> spider code</h3>
+<div class="outline-text-3" id="text-1-3">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">from</span> scrapy.contrib.spiders <span style="color: #859900; font-weight: bold;">import</span> CrawlSpider, Rule
+<span style="color: #859900; font-weight: bold;">from</span> scrapy.contrib.linkextractors <span style="color: #859900; font-weight: bold;">import</span> LinkExtractor
+
+<span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">MininovaSpider</span>(CrawlSpider):
+
+    <span style="color: #268bd2;">name</span> = <span style="color: #2aa198;">'mininova'</span>
+    <span style="color: #268bd2;">allowed_domains</span> = [<span style="color: #2aa198;">'mininova.org'</span>]
+    <span style="color: #268bd2;">start_urls</span> = [<span style="color: #2aa198;">'http://www.mininova.org/today'</span>]
+    <span style="color: #268bd2;">rules</span> = [Rule(LinkExtractor(allow=[<span style="color: #2aa198;">'/tor/\d+'</span>]), <span style="color: #2aa198;">'parse_torrent'</span>)]
+
+    <span style="color: #859900; font-weight: bold;">def</span> <span style="color: #268bd2;">parse_torrent</span>(<span style="color: #859900; font-weight: bold;">self</span>, response):
+        <span style="color: #268bd2;">torrent</span> = TorrentItem()
+        <span style="color: #268bd2;">torrent</span>[<span style="color: #2aa198;">'url'</span>] = response.url
+        <span style="color: #268bd2;">torrent</span>[<span style="color: #2aa198;">'name'</span>] = response.xpath(<span style="color: #2aa198;">"//h1/text()"</span>).extract()
+        <span style="color: #268bd2;">torrent</span>[<span style="color: #2aa198;">'description'</span>] = response.xpath(<span style="color: #2aa198;">"//div[@id='description']"</span>).extract()
+        <span style="color: #268bd2;">torrent</span>[<span style="color: #2aa198;">'size'</span>] = response.xpath(<span style="color: #2aa198;">"//div[@id='info-left']/p[2]/text()[2]"</span>).extract()
+        <span style="color: #859900; font-weight: bold;">return</span> torrent
+</pre>
+</div>
+</div>
+</div>
+<div id="org0a89cff" class="outline-3">
+<h3 id="org0a89cff"><span class="section-number-3">1.4</span> 执行spider，获取数据</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+scrapy crawl mininova -o scrapy<sub>data.json</sub>
+</p>
+</div>
+</div>
+<div id="orga30b2b3" class="outline-3">
+<h3 id="orga30b2b3"><span class="section-number-3">1.5</span> 查看提取的数据</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+emacs scrapy<sub>data.json</sub>
+</p>
+</div>
+</div>
+</div>
+
+<div id="orgd6bcdc4" class="outline-2">
+<h2 id="orgd6bcdc4"><span class="section-number-2">2</span> 安装指南</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="org8295931" class="outline-3">
+<h3 id="org8295931"><span class="section-number-3">2.1</span> 安装scrapy</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+pip install scrapy
+</p>
+</div>
+</div>
+</div>
+
+<div id="org50891f4" class="outline-2">
+<h2 id="org50891f4"><span class="section-number-2">3</span> scrapy 入门教程</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="orgfdb9240" class="outline-3">
+<h3 id="orgfdb9240"><span class="section-number-3">3.1</span> 创建一个scrapy项目</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+scrapy startproject tutorial
+</p>
+<div class="org-src-container">
+<pre class="src src-项目tree">tutorial/
+    scrapy.cfg
+    tutorial/
+        __init__.py
+        items.py
+        pipelines.py
+        settings.py
+        spiders/
+            __init__.py
+            ...
+</pre>
+</div>
+<p>
+scrapy.cfg:项目配置文件
+tutorial/项目Python模块，在此添加代码
+tutorial/items.py:项目中的item文件
+tutorial/pipelines.py:项目中的pipeline文件
+tutorial/settings.py:项目中的配置文件
+tutorial/spiders:放置spider代码
+</p>
+</div>
+</div>
+<div id="org8cd3371" class="outline-3">
+<h3 id="org8cd3371"><span class="section-number-3">3.2</span> 定义爬取的item</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+编辑tutorial目录中的items.py
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">import</span> scrapy
+
+<span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">DmozItem</span>(scrapy.Item):
+    <span style="color: #268bd2;">title</span> = scrapy.Field()
+    <span style="color: #268bd2;">link</span> = scrapy.Field()
+    <span style="color: #268bd2;">desc</span> = scrapy.Field()
+</pre>
+</div>
+</div>
+</div>
+<div id="orgc89e65d" class="outline-3">
+<h3 id="orgc89e65d"><span class="section-number-3">3.3</span> 编写spider并提取item</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+spider必须继承scrapy.Spider,定义以下三个属性
+name:用于区别spider，name唯一。
+start<sub>urls</sub>:包含爬取的URL列表。
+parse():spider的一个方法，负责解析返回的数据，提取数据，以及生成进一步处理的URL对象新建文件，保存在tutorial/spiders目录下，dmoz<sub>spider.py</sub>
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">import</span> scrapy
+
+<span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">DmozSpider</span>(scrapy.spiders.Spider):
+    <span style="color: #268bd2;">name</span> = <span style="color: #2aa198;">"dmoz"</span>
+    <span style="color: #268bd2;">allowed_domains</span> = [<span style="color: #2aa198;">"dmoz.org"</span>]
+    <span style="color: #268bd2;">start_urls</span> = [
+        <span style="color: #2aa198;">"http://www.dmoz.org/Computers/Programming/Languages/Python/Books/"</span>,
+        <span style="color: #2aa198;">"http://www.dmoz.org/Computers/Programming/Languages/Python/Resources/"</span>
+    ]
+
+    <span style="color: #859900; font-weight: bold;">def</span> <span style="color: #268bd2;">parse</span>(<span style="color: #859900; font-weight: bold;">self</span>, response):
+        <span style="color: #268bd2;">filename</span> = response.url.split(<span style="color: #2aa198;">"/"</span>)[-<span style="color: #6c71c4;">2</span>]
+        <span style="color: #859900; font-weight: bold;">with</span> <span style="color: #657b83; font-weight: bold;">open</span>(filename, <span style="color: #2aa198;">'wb'</span>) <span style="color: #859900; font-weight: bold;">as</span> f:
+            f.write(response.body)
+</pre>
+</div>
+</div>
+<div id="org49dd864" class="outline-4">
+<h4 id="org49dd864"><span class="section-number-4">3.3.1</span> 爬取</h4>
+<div class="outline-text-4" id="text-3-3-1">
+<p>
+scrapy crawl dmoz
+</p>
+</div>
+</div>
+<div id="org88395f5" class="outline-4">
+<h4 id="org88395f5"><span class="section-number-4">3.3.2</span> 提取item</h4>
+<div class="outline-text-4" id="text-3-3-2">
+<p>
+scrapy使用xpath和css表达式机制
+example：
+/html/head/title:选择HTML文档中head标签内的title元素
+/html/head/title/text():上面title元素的文字
+//td:选择所有的td元素
+//div[@class='mine']:选择所有的具有class=‘mine’的div元素
+www.w3school.com.cn/xpath/index.asp
+</p>
+</div>
+</div>
+<div id="orgbd2823a" class="outline-4">
+<h4 id="orgbd2823a"><span class="section-number-4">3.3.3</span> selectors选择器</h4>
+<div class="outline-text-4" id="text-3-3-3">
+<p>
+xpath():传入xpath表达式，返回节点list
+css():传入css表达式，返回节点list
+extract():序列化改节点为Unicode字符，返回list
+re():根据正则表达式对数据进行提取，返回Unicode list
+</p>
+</div>
+</div>
+
+<div id="org10cf47d" class="outline-4">
+<h4 id="org10cf47d"><span class="section-number-4">3.3.4</span> 提取数据</h4>
+<div class="outline-text-4" id="text-3-3-4">
+<p>
+在终端输入response.body查看HTML
+</p>
+<div class="org-src-container">
+<pre class="src src-python">sel.xpath(<span style="color: #2aa198;">'//ul/li'</span>)
+sel.xpath(<span style="color: #2aa198;">'//ul/li/text()'</span>).extract()
+<span style="color: #859900; font-weight: bold;">for</span> sel <span style="color: #859900; font-weight: bold;">in</span> response.xpath(<span style="color: #2aa198;">'//ul/li'</span>):
+    <span style="color: #268bd2;">title</span> = sel.xpath(<span style="color: #2aa198;">'a/text()'</span>).extract()
+    <span style="color: #268bd2;">link</span> = sel.xpath(<span style="color: #2aa198;">'a/@href'</span>).extract()
+    <span style="color: #268bd2;">desc</span> = sel.xpath(<span style="color: #2aa198;">'text()'</span>).extract()
+    <span style="color: #859900; font-weight: bold;">print</span> title, link, desc
+</pre>
+</div>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">import</span> scrapy
+
+<span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">DmozSpider</span>(scrapy.Spider):
+    <span style="color: #268bd2;">name</span> = <span style="color: #2aa198;">"dmoz"</span>
+    <span style="color: #268bd2;">allowed_domains</span> = [<span style="color: #2aa198;">"dmoz.org"</span>]
+    <span style="color: #268bd2;">start_urls</span> = [
+        <span style="color: #2aa198;">"http://www.dmoz.org/Computers/Programming/Languages/Python/Books/"</span>,
+        <span style="color: #2aa198;">"http://www.dmoz.org/Computers/Programming/Languages/Python/Resources/"</span>
+    ]
+
+    <span style="color: #859900; font-weight: bold;">def</span> <span style="color: #268bd2;">parse</span>(<span style="color: #859900; font-weight: bold;">self</span>, response):
+        <span style="color: #859900; font-weight: bold;">for</span> sel <span style="color: #859900; font-weight: bold;">in</span> response.xpath(<span style="color: #2aa198;">'//ul/li'</span>):
+            <span style="color: #268bd2;">title</span> = sel.xpath(<span style="color: #2aa198;">'a/text()'</span>).extract()
+            <span style="color: #268bd2;">link</span> = sel.xpath(<span style="color: #2aa198;">'a/@href'</span>).extract()
+            <span style="color: #268bd2;">desc</span> = sel.xpath(<span style="color: #2aa198;">'text()'</span>).extract()
+            <span style="color: #859900; font-weight: bold;">print</span> title, link, desc
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="org3b813eb" class="outline-3">
+<h3 id="org3b813eb"><span class="section-number-3">3.4</span> 使用item</h3>
+<div class="outline-text-3" id="text-3-4">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">import</span> scrapy
+
+<span style="color: #859900; font-weight: bold;">from</span> tutorial.items <span style="color: #859900; font-weight: bold;">import</span> DmozItem
+
+<span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">DmozSpider</span>(scrapy.Spider):
+    <span style="color: #268bd2;">name</span> = <span style="color: #2aa198;">"dmoz"</span>
+    <span style="color: #268bd2;">allowed_domains</span> = [<span style="color: #2aa198;">"dmoz.org"</span>]
+    <span style="color: #268bd2;">start_urls</span> = [
+        <span style="color: #2aa198;">"http://www.dmoz.org/Computers/Programming/Languages/Python/Books/"</span>,
+        <span style="color: #2aa198;">"http://www.dmoz.org/Computers/Programming/Languages/Python/Resources/"</span>
+    ]
+
+    <span style="color: #859900; font-weight: bold;">def</span> <span style="color: #268bd2;">parse</span>(<span style="color: #859900; font-weight: bold;">self</span>, response):
+        <span style="color: #859900; font-weight: bold;">for</span> sel <span style="color: #859900; font-weight: bold;">in</span> response.xpath(<span style="color: #2aa198;">'//ul/li'</span>):
+            <span style="color: #268bd2;">item</span> = DmozItem()
+            <span style="color: #268bd2;">item</span>[<span style="color: #2aa198;">'title'</span>] = sel.xpath(<span style="color: #2aa198;">'a/text()'</span>).extract()
+            <span style="color: #268bd2;">item</span>[<span style="color: #2aa198;">'link'</span>] = sel.xpath(<span style="color: #2aa198;">'a/@href'</span>).extract()
+            <span style="color: #268bd2;">item</span>[<span style="color: #2aa198;">'desc'</span>] = sel.xpath(<span style="color: #2aa198;">'text()'</span>).extract()
+            <span style="color: #859900; font-weight: bold;">yield</span> item
+</pre>
+</div>
+</div>
+</div>
+<div id="org3dd7856" class="outline-3">
+<h3 id="org3dd7856"><span class="section-number-3">3.5</span> 编写item pipeline来保存获取到的数据</h3>
+<div class="outline-text-3" id="text-3-5">
+<p>
+保存爬取到的数据
+</p>
+<div class="org-src-container">
+<pre class="src src-python">scrapy crawl dmoz -o items.json
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="org9b8f759" class="outline-2">
+<h2 id="org9b8f759"><span class="section-number-2">4</span> 命令行工具</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="org9fac3a0" class="outline-3">
+<h3 id="org9fac3a0"><span class="section-number-3">4.1</span> 默认的scrapy的结构</h3>
+<div class="outline-text-3" id="text-4-1">
+<div class="org-src-container">
+<pre class="src src-scrapy">scrapy.cfg
+myproject/
+    __init__.py
+    items.py
+    pipelines.py
+    settings.py
+    spiders/
+        __init__.py
+        spider1.py
+        spider2.py
+        ...
+</pre>
+</div>
+</div>
+</div>
+<div id="org1682411" class="outline-3">
+<h3 id="org1682411"><span class="section-number-3">4.2</span> 使用scrapy工具</h3>
+<div class="outline-text-3" id="text-4-2">
+<div class="org-src-container">
+<pre class="src src-scrapy">Scrapy 1.3.0 - no active project
+
+Usage:
+  scrapy &lt;command&gt; [options] [args]
+
+Available commands:
+  bench         Run quick benchmark test
+  commands
+  fetch         Fetch a URL using the Scrapy downloader
+  genspider     Generate new spider using pre-defined templates
+  runspider     Run a self-contained spider (without creating a project)
+  settings      Get settings values
+  shell         Interactive scraping console
+  startproject  Create new project
+  version       Print Scrapy version
+  view          Open URL in browser, as seen by Scrapy
+
+  [ more ]      More commands available when run from project directory
+
+Use "scrapy &lt;command&gt; -h" to see more info about a command
+</pre>
+</div>
+</div>
+</div>
+<div id="org6f90ec9" class="outline-3">
+<h3 id="org6f90ec9"><span class="section-number-3">4.3</span> 创建项目</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+scrapy startproject myproject
+cd myproject
+然后可以使用scrapy命令来控制项目
+</p>
+</div>
+</div>
+
+<div id="org3da1215" class="outline-3">
+<h3 id="org3da1215"><span class="section-number-3">4.4</span> 控制项目</h3>
+<div class="outline-text-3" id="text-4-4">
+<p>
+创建一个新的spider：scrapy genspider mydomain mydomain.com
+</p>
+</div>
+</div>
+<div id="org4b73d96" class="outline-3">
+<h3 id="org4b73d96"><span class="section-number-3">4.5</span> 可用的scrapy命令</h3>
+<div class="outline-text-3" id="text-4-5">
+<p>
+scrapy&lt;command&gt; -h
+</p>
+</div>
+<div id="org2e1979a" class="outline-4">
+<h4 id="org2e1979a"><span class="section-number-4">4.5.1</span> 全局命令：</h4>
+<div class="outline-text-4" id="text-4-5-1">
+<p>
+startproject,settings,runspider,shell,fetch,view,version
+</p>
+</div>
+</div>
+<div id="org81cfbf7" class="outline-4">
+<h4 id="org81cfbf7"><span class="section-number-4">4.5.2</span> 项目命令：</h4>
+<div class="outline-text-4" id="text-4-5-2">
+<p>
+crawl,check,list,edit,parse,genspider,deploy,bench
+</p>
+</div>
+</div>
+
+<div id="org79837f9" class="outline-4">
+<h4 id="org79837f9"><span class="section-number-4">4.5.3</span> genspider</h4>
+<div class="outline-text-4" id="text-4-5-3">
+<p>
+在项目中创建spider
+scrapy genspider [-t template] &lt;name&gt; &lt;domain&gt;
+查看模板：scrapy genspider -l
+查看详细信息：scrapy genspider -d basic
+使用模板：scrapy genspider -t basic example example.com
+</p>
+</div>
+</div>
+<div id="orgba668ac" class="outline-4">
+<h4 id="orgba668ac"><span class="section-number-4">4.5.4</span> crawl</h4>
+<div class="outline-text-4" id="text-4-5-4">
+<p>
+语法：scrapy crawl &lt;spider&gt;
+</p>
+</div>
+</div>
+<div id="orgf575225" class="outline-4">
+<h4 id="orgf575225"><span class="section-number-4">4.5.5</span> check</h4>
+<div class="outline-text-4" id="text-4-5-5">
+<p>
+scrapy check [-l] &lt;spider&gt;
+</p>
+</div>
+</div>
+<div id="org8bb4ec1" class="outline-4">
+<h4 id="org8bb4ec1"><span class="section-number-4">4.5.6</span> list</h4>
+<div class="outline-text-4" id="text-4-5-6">
+<p>
+列出所有的spider：scrapy list
+</p>
+</div>
+</div>
+<div id="org53150c5" class="outline-4">
+<h4 id="org53150c5"><span class="section-number-4">4.5.7</span> fetch</h4>
+<div class="outline-text-4" id="text-4-5-7">
+<p>
+scrapy fetch url
+scrapy fetch &#x2013;nolog &#x2013;headers <a href="https://www.baidu.com">https://www.baidu.com</a>
+</p>
+</div>
+</div>
+<div id="org3da4cea" class="outline-4">
+<h4 id="org3da4cea"><span class="section-number-4">4.5.8</span> view</h4>
+<div class="outline-text-4" id="text-4-5-8">
+<p>
+在浏览器打开给定的URL
+scrapy view url
+</p>
+</div>
+</div>
+<div id="orgc2678f5" class="outline-4">
+<h4 id="orgc2678f5"><span class="section-number-4">4.5.9</span> settings</h4>
+<div class="outline-text-4" id="text-4-5-9">
+<p>
+scrapy settings &#x2013;get BOT<sub>NAME</sub>
+scrapy settings &#x2013;get DOWNLOAD<sub>DELAY</sub>
+</p>
+</div>
+</div>
+<div id="orgae24858" class="outline-4">
+<h4 id="orgae24858"><span class="section-number-4">4.5.10</span> runspider</h4>
+<div class="outline-text-4" id="text-4-5-10">
+<p>
+scrapy runspider &lt;spider<sub>file.py</sub>&gt;
+运行一个为创建项目的spider
+</p>
+</div>
+</div>
+<div id="org105bc79" class="outline-4">
+<h4 id="org105bc79"><span class="section-number-4">4.5.11</span> version</h4>
+<div class="outline-text-4" id="text-4-5-11">
+<p>
+scrapy version -v
+Scrapy    : 1.3.0
+lxml      : 3.7.1.0
+libxml2   : 2.9.4
+cssselect : 1.0.1
+parsel    : 1.1.0
+w3lib     : 1.16.0
+Twisted   : 16.6.0
+Python    : 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:18:55) [MSC v.1900 64 bit (AMD64)]
+pyOpenSSL : 16.2.0 (OpenSSL 1.0.2k  26 Jan 2017)
+Platform  : Windows-7-6.1.7601-SP1
+</p>
+</div>
+</div>
+<div id="orgd943feb" class="outline-4">
+<h4 id="orgd943feb"><span class="section-number-4">4.5.12</span> deploy</h4>
+<div class="outline-text-4" id="text-4-5-12">
+<p>
+scrapy deploy [ &lt;target:project&gt; | -l &lt;target&gt; | -L ]
+</p>
+</div>
+</div>
+<div id="orga1f8f15" class="outline-4">
+<h4 id="orga1f8f15"><span class="section-number-4">4.5.13</span> bench</h4>
+<div class="outline-text-4" id="text-4-5-13">
+<p>
+scrapy bench
+运行benchmark测试
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="org288783e" class="outline-2">
+<h2 id="org288783e"><span class="section-number-2">5</span> Items</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Item 对象是种简单的容器，保存了爬取到得数据。 其提供了 类似于词典(dictionary-like) 的API以及用于声明可用字段的简单语法
+</p>
+</div>
+<div id="org6ebb895" class="outline-3">
+<h3 id="org6ebb895"><span class="section-number-3">5.1</span> 声明item</h3>
+<div class="outline-text-3" id="text-5-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">import</span> scrapy
+
+<span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">Product</span>(scrapy.Item):
+    <span style="color: #268bd2;">name</span> = scrapy.Field()
+    <span style="color: #268bd2;">price</span> = scrapy.Field()
+    <span style="color: #268bd2;">stock</span> = scrapy.Field()
+    <span style="color: #268bd2;">last_updated</span> = scrapy.Field(serializer=<span style="color: #657b83; font-weight: bold;">str</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="org10429ae" class="outline-3">
+<h3 id="org10429ae"><span class="section-number-3">5.2</span> 与Item配合</h3>
+<div class="outline-text-3" id="text-5-2">
+</div><div id="org552a7ac" class="outline-4">
+<h4 id="org552a7ac"><span class="section-number-4">5.2.1</span> 创建item</h4>
+<div class="outline-text-4" id="text-5-2-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">product</span> = Product(name=<span style="color: #2aa198;">'Desktop PC'</span>, price=<span style="color: #6c71c4;">1000</span>)
+<span style="color: #859900; font-weight: bold;">print</span> product
+Product(name=<span style="color: #2aa198;">'Desktop PC'</span>, price=<span style="color: #6c71c4;">1000</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="orga380b1b" class="outline-4">
+<h4 id="orga380b1b"><span class="section-number-4">5.2.2</span> 获取字段的值</h4>
+<div class="outline-text-4" id="text-5-2-2">
+<div class="org-src-container">
+<pre class="src src-python">product[<span style="color: #2aa198;">'name'</span>]
+Desktop PC
+product.get(<span style="color: #2aa198;">'name'</span>)
+Desktop PC
+
+product[<span style="color: #2aa198;">'price'</span>]
+<span style="color: #6c71c4;">1000</span>
+
+product[<span style="color: #2aa198;">'last_updated'</span>]
+Traceback (most recent call last):
+    ...
+<span style="color: #b58900;">KeyError</span>: <span style="color: #2aa198;">'last_updated'</span>
+
+product.get(<span style="color: #2aa198;">'last_updated'</span>, <span style="color: #2aa198;">'not set'</span>)
+<span style="color: #859900; font-weight: bold;">not</span> <span style="color: #657b83; font-weight: bold;">set</span>
+
+product[<span style="color: #2aa198;">'lala'</span>] <span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">getting unknown field</span>
+Traceback (most recent call last):
+    ...
+<span style="color: #b58900;">KeyError</span>: <span style="color: #2aa198;">'lala'</span>
+
+product.get(<span style="color: #2aa198;">'lala'</span>, <span style="color: #2aa198;">'unknown field'</span>)
+<span style="color: #2aa198;">'unknown field'</span>
+
+<span style="color: #2aa198;">'name'</span> <span style="color: #859900; font-weight: bold;">in</span> product  <span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">is name field populated?</span>
+<span style="color: #268bd2; font-weight: bold;">True</span>
+
+<span style="color: #2aa198;">'last_updated'</span> <span style="color: #859900; font-weight: bold;">in</span> product  <span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">is last_updated populated?</span>
+<span style="color: #268bd2; font-weight: bold;">False</span>
+
+<span style="color: #2aa198;">'last_updated'</span> <span style="color: #859900; font-weight: bold;">in</span> product.fields  <span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">is last_updated a declared field?</span>
+<span style="color: #268bd2; font-weight: bold;">True</span>
+
+<span style="color: #2aa198;">'lala'</span> <span style="color: #859900; font-weight: bold;">in</span> product.fields  <span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">is lala a declared field?</span>
+<span style="color: #268bd2; font-weight: bold;">False</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="orgf0eb787" class="outline-4">
+<h4 id="orgf0eb787"><span class="section-number-4">5.2.3</span> 设置字段的值</h4>
+<div class="outline-text-4" id="text-5-2-3">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">product</span>[<span style="color: #2aa198;">'last_updated'</span>] = <span style="color: #2aa198;">'today'</span>
+product[<span style="color: #2aa198;">'last_updated'</span>]
+today
+
+<span style="color: #268bd2;">product</span>[<span style="color: #2aa198;">'lala'</span>] = <span style="color: #2aa198;">'test'</span> <span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">setting unknown field</span>
+Traceback (most recent call last):
+    ...
+<span style="color: #b58900;">KeyError</span>: <span style="color: #2aa198;">'Product does not support field: lala'</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="orge8be8d6" class="outline-4">
+<h4 id="orge8be8d6"><span class="section-number-4">5.2.4</span> 获取所有获取的值</h4>
+<div class="outline-text-4" id="text-5-2-4">
+<p>
+product.keys()
+product.items()
+</p>
+</div>
+</div>
+</div>
+<div id="orgd2a035d" class="outline-3">
+<h3 id="orgd2a035d"><span class="section-number-3">5.3</span> 其他任务</h3>
+<div class="outline-text-3" id="text-5-3">
+</div><div id="org332f063" class="outline-4">
+<h4 id="org332f063"><span class="section-number-4">5.3.1</span> 复制item</h4>
+<div class="outline-text-4" id="text-5-3-1">
+<p>
+product2 = Product(product)
+product3 = product2.copy()
+</p>
+</div>
+</div>
+<div id="org61686e6" class="outline-4">
+<h4 id="org61686e6"><span class="section-number-4">5.3.2</span> 根据item创建字典</h4>
+<div class="outline-text-4" id="text-5-3-2">
+<p>
+dict(product)
+</p>
+</div>
+</div>
+<div id="org2ced5fe" class="outline-4">
+<h4 id="org2ced5fe"><span class="section-number-4">5.3.3</span> 根据字典创建item</h4>
+<div class="outline-text-4" id="text-5-3-3">
+<p>
+Product({'name':'niuniu','price':'expensive'})
+Product({'name':'niuniu','lala':'expensive'})#error
+</p>
+</div>
+</div>
+</div>
+<div id="orgde54011" class="outline-3">
+<h3 id="orgde54011"><span class="section-number-3">5.4</span> 扩展item</h3>
+<div class="outline-text-3" id="text-5-4">
+<p>
+继承原始的item来扩展item
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">DiscountedProduct</span>(Product):
+    <span style="color: #268bd2;">discount_percent</span> = scrapy.Field(serializer=<span style="color: #657b83; font-weight: bold;">str</span>)
+    <span style="color: #268bd2;">discount_expiration_date</span> = scrapy.Field()
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="org6e37ef3" class="outline-2">
+<h2 id="org6e37ef3"><span class="section-number-2">6</span> spiders</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+定义爬取动作，分析网页的地方
+spider中初始的request是通过调用 start<sub>requests</sub>() 来获取的。
+start<sub>requests</sub>() 读取 start<sub>urls</sub> 中的URL， 并以 parse 为回调函数生成 Request 。
+</p>
+</div>
+<div id="org9c1ed2c" class="outline-3">
+<h3 id="org9c1ed2c"><span class="section-number-3">6.1</span> spider参数</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+在运行crawl时，添加-a可以传递spider参数：
+scrapy crawl myspider -a category=electronics
+spider在构造中获取参数
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">import</span> scrapy
+
+<span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">MySpider</span>(Spider):
+    <span style="color: #268bd2;">name</span> = <span style="color: #2aa198;">'myspider'</span>
+
+    <span style="color: #859900; font-weight: bold;">def</span> <span style="color: #268bd2;">__init__</span>(<span style="color: #859900; font-weight: bold;">self</span>, category=<span style="color: #268bd2; font-weight: bold;">None</span>, *args, **kwargs):
+        <span style="color: #657b83; font-weight: bold;">super</span>(MySpider, <span style="color: #859900; font-weight: bold;">self</span>).__init__(*args, **kwargs)
+        <span style="color: #859900; font-weight: bold;">self</span>.start_urls = [<span style="color: #2aa198;">'http://www.example.com/categories/%s'</span> % category]
+        <span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">...</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="org29b57a2" class="outline-3">
+<h3 id="org29b57a2"><span class="section-number-3">6.2</span> 内置spider参考手册</h3>
+<div class="outline-text-3" id="text-6-2">
+</div><div id="org96e61f2" class="outline-4">
+<h4 id="org96e61f2"><span class="section-number-4">6.2.1</span> spider</h4>
+<div class="outline-text-4" id="text-6-2-1">
+<p>
+Spider并没有提供什么特殊的功能。 其仅仅请求给定的 start<sub>urls</sub>/start<sub>requests</sub>，并根据返回的结果(resulting responses)调用spider的 parse 方法。
+name:定义spider名字的字符串，唯一。
+allowed<sub>domains</sub>:允许爬取的域名列表
+start<sub>urls</sub>:url列表，没有特定的URL时，从该列表开始爬取。
+</p>
+</div>
+</div>
+<div id="orgf6d7a2c" class="outline-4">
+<h4 id="orgf6d7a2c"><span class="section-number-4">6.2.2</span> custom<sub>settings</sub></h4>
+<div class="outline-text-4" id="text-6-2-2">
+<p>
+for detail: <a href="http://scrapy-chs.readthedocs.io/zh_CN/latest/topics/settings.html#topics-settings-ref">http://scrapy-chs.readthedocs.io/zh_CN/latest/topics/settings.html#topics-settings-ref</a>
+</p>
+</div>
+</div>
+<div id="orgbb44399" class="outline-4">
+<h4 id="orgbb44399"><span class="section-number-4">6.2.3</span> crawler</h4>
+<div class="outline-text-4" id="text-6-2-3">
+<p>
+for detail: <a href="http://scrapy-chs.readthedocs.io/zh_CN/latest/topics/api.html#topics-api-crawler">http://scrapy-chs.readthedocs.io/zh_CN/latest/topics/api.html#topics-api-crawler</a>
+</p>
+</div>
+</div>
+<div id="org4a9c8eb" class="outline-4">
+<h4 id="org4a9c8eb"><span class="section-number-4">6.2.4</span> start<sub>requests</sub>()</h4>
+<div class="outline-text-4" id="text-6-2-4">
+<p>
+返回一个可迭代的对象，默认使用start<sub>urls的url生成requests</sub>.
+可以重写该方法
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">def</span> <span style="color: #268bd2;">start_requests</span>(<span style="color: #859900; font-weight: bold;">self</span>):
+    <span style="color: #859900; font-weight: bold;">return</span> [scrapy.FormRequest(<span style="color: #2aa198;">"http://www.example.com/login"</span>,
+                               formdata={<span style="color: #2aa198;">'user'</span>: <span style="color: #2aa198;">'john'</span>, <span style="color: #2aa198;">'pass'</span>: <span style="color: #2aa198;">'secret'</span>},
+                               callback=<span style="color: #859900; font-weight: bold;">self</span>.logged_in)]
+
+<span style="color: #859900; font-weight: bold;">def</span> <span style="color: #268bd2;">logged_in</span>(<span style="color: #859900; font-weight: bold;">self</span>, response):
+    <span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">here you would extract links to follow and return Requests for</span>
+    <span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">each of them, with another callback</span>
+    <span style="color: #859900; font-weight: bold;">pass</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="org5f77bdd" class="outline-4">
+<h4 id="org5f77bdd"><span class="section-number-4">6.2.5</span> parse(response)</h4>
+<div class="outline-text-4" id="text-6-2-5">
+<p>
+当没有指定callback函数时，这个方法是默认的回调函数
+</p>
+</div>
+</div>
+<div id="org541eb30" class="outline-4">
+<h4 id="org541eb30"><span class="section-number-4">6.2.6</span> log()</h4>
+<div class="outline-text-4" id="text-6-2-6">
+<p>
+for detail:<a href="http://scrapy-chs.readthedocs.io/zh_CN/latest/topics/logging.html#topics-logging">http://scrapy-chs.readthedocs.io/zh_CN/latest/topics/logging.html#topics-logging</a>
+</p>
+</div>
+</div>
+<div id="orgc4ee2ef" class="outline-4">
+<h4 id="orgc4ee2ef"><span class="section-number-4">6.2.7</span> closed()</h4>
+<div class="outline-text-4" id="text-6-2-7">
+<p>
+spider关闭时调用
+</p>
+</div>
+</div>
+</div>
+<div id="org8f5e0f3" class="outline-3">
+<h3 id="org8f5e0f3"><span class="section-number-3">6.3</span> spider样例</h3>
+<div class="outline-text-3" id="text-6-3">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">import</span> scrapy
+
+<span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">MySpider</span>(scrapy.Spider):
+    <span style="color: #268bd2;">name</span> = <span style="color: #2aa198;">'example.com'</span>
+    <span style="color: #268bd2;">allowed_domains</span> = [<span style="color: #2aa198;">'example.com'</span>]
+    <span style="color: #268bd2;">start_urls</span> = [
+        <span style="color: #2aa198;">'http://www.example.com/1.html'</span>,
+        <span style="color: #2aa198;">'http://www.example.com/2.html'</span>,
+        <span style="color: #2aa198;">'http://www.example.com/3.html'</span>,
+    ]
+
+    <span style="color: #859900; font-weight: bold;">def</span> <span style="color: #268bd2;">parse</span>(<span style="color: #859900; font-weight: bold;">self</span>, response):
+        <span style="color: #859900; font-weight: bold;">self</span>.log(<span style="color: #2aa198;">'A response from %s just arrived!'</span> % response.url)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">import</span> scrapy
+<span style="color: #859900; font-weight: bold;">from</span> myproject.items <span style="color: #859900; font-weight: bold;">import</span> MyItem
+
+<span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">MySpider</span>(scrapy.Spider):
+    <span style="color: #268bd2;">name</span> = <span style="color: #2aa198;">'example.com'</span>
+    <span style="color: #268bd2;">allowed_domains</span> = [<span style="color: #2aa198;">'example.com'</span>]
+    <span style="color: #268bd2;">start_urls</span> = [
+        <span style="color: #2aa198;">'http://www.example.com/1.html'</span>,
+        <span style="color: #2aa198;">'http://www.example.com/2.html'</span>,
+        <span style="color: #2aa198;">'http://www.example.com/3.html'</span>,
+    ]
+
+    <span style="color: #859900; font-weight: bold;">def</span> <span style="color: #268bd2;">parse</span>(<span style="color: #859900; font-weight: bold;">self</span>, response):
+        <span style="color: #268bd2;">sel</span> = scrapy.Selector(response)
+        <span style="color: #859900; font-weight: bold;">for</span> h3 <span style="color: #859900; font-weight: bold;">in</span> response.xpath(<span style="color: #2aa198;">'//h3'</span>).extract():
+            <span style="color: #859900; font-weight: bold;">yield</span> MyItem(title=h3)
+
+        <span style="color: #859900; font-weight: bold;">for</span> url <span style="color: #859900; font-weight: bold;">in</span> response.xpath(<span style="color: #2aa198;">'//a/@href'</span>).extract():
+            <span style="color: #859900; font-weight: bold;">yield</span> scrapy.Request(url, callback=<span style="color: #859900; font-weight: bold;">self</span>.parse)
+</pre>
+</div>
+</div>
+</div>
+<div id="org5e1052b" class="outline-3">
+<h3 id="org5e1052b"><span class="section-number-3">6.4</span> crawlspider样例</h3>
+<div class="outline-text-3" id="text-6-4">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">import</span> scrapy
+<span style="color: #859900; font-weight: bold;">from</span> scrapy.contrib.spiders <span style="color: #859900; font-weight: bold;">import</span> CrawlSpider, Rule
+<span style="color: #859900; font-weight: bold;">from</span> scrapy.contrib.linkextractors <span style="color: #859900; font-weight: bold;">import</span> LinkExtractor
+
+<span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">MySpider</span>(CrawlSpider):
+    <span style="color: #268bd2;">name</span> = <span style="color: #2aa198;">'example.com'</span>
+    <span style="color: #268bd2;">allowed_domains</span> = [<span style="color: #2aa198;">'example.com'</span>]
+    <span style="color: #268bd2;">start_urls</span> = [<span style="color: #2aa198;">'http://www.example.com'</span>]
+
+    <span style="color: #268bd2;">rules</span> = (
+        <span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">&#25552;&#21462;&#21305;&#37197; 'category.php' (&#20294;&#19981;&#21305;&#37197; 'subsection.php') &#30340;&#38142;&#25509;&#24182;&#36319;&#36827;&#38142;&#25509;(&#27809;&#26377;callback&#24847;&#21619;&#30528;follow&#40664;&#35748;&#20026;True)</span>
+        Rule(LinkExtractor(allow=(<span style="color: #2aa198;">'category\.php'</span>, ), deny=(<span style="color: #2aa198;">'subsection\.php'</span>, ))),
+
+        <span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">&#25552;&#21462;&#21305;&#37197; 'item.php' &#30340;&#38142;&#25509;&#24182;&#20351;&#29992;spider&#30340;parse_item&#26041;&#27861;&#36827;&#34892;&#20998;&#26512;</span>
+        Rule(LinkExtractor(allow=(<span style="color: #2aa198;">'item\.php'</span>, )), callback=<span style="color: #2aa198;">'parse_item'</span>),
+    )
+
+    <span style="color: #859900; font-weight: bold;">def</span> <span style="color: #268bd2;">parse_item</span>(<span style="color: #859900; font-weight: bold;">self</span>, response):
+        <span style="color: #859900; font-weight: bold;">self</span>.log(<span style="color: #2aa198;">'Hi, this is an item page! %s'</span> % response.url)
+
+        <span style="color: #268bd2;">item</span> = scrapy.Item()
+        <span style="color: #268bd2;">item</span>[<span style="color: #2aa198;">'id'</span>] = response.xpath(<span style="color: #2aa198;">'//td[@id="item_id"]/text()'</span>).re(r<span style="color: #2aa198;">'ID: (\d+)'</span>)
+        <span style="color: #268bd2;">item</span>[<span style="color: #2aa198;">'name'</span>] = response.xpath(<span style="color: #2aa198;">'//td[@id="item_name"]/text()'</span>).extract()
+        <span style="color: #268bd2;">item</span>[<span style="color: #2aa198;">'description'</span>] = response.xpath(<span style="color: #2aa198;">'//td[@id="item_description"]/text()'</span>).extract()
+        <span style="color: #859900; font-weight: bold;">return</span> item
+</pre>
+</div>
+</div>
+</div>
+<div id="org80c6bf9" class="outline-3">
+<h3 id="org80c6bf9"><span class="section-number-3">6.5</span> XMLFeedSpider</h3>
+<div class="outline-text-3" id="text-6-5">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">from</span> scrapy <span style="color: #859900; font-weight: bold;">import</span> log
+<span style="color: #859900; font-weight: bold;">from</span> scrapy.contrib.spiders <span style="color: #859900; font-weight: bold;">import</span> XMLFeedSpider
+<span style="color: #859900; font-weight: bold;">from</span> myproject.items <span style="color: #859900; font-weight: bold;">import</span> TestItem
+
+<span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">MySpider</span>(XMLFeedSpider):
+    <span style="color: #268bd2;">name</span> = <span style="color: #2aa198;">'example.com'</span>
+    <span style="color: #268bd2;">allowed_domains</span> = [<span style="color: #2aa198;">'example.com'</span>]
+    <span style="color: #268bd2;">start_urls</span> = [<span style="color: #2aa198;">'http://www.example.com/feed.xml'</span>]
+    <span style="color: #268bd2;">iterator</span> = <span style="color: #2aa198;">'iternodes'</span> <span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">This is actually unnecessary, since it's the default value</span>
+    <span style="color: #268bd2;">itertag</span> = <span style="color: #2aa198;">'item'</span>
+
+    <span style="color: #859900; font-weight: bold;">def</span> <span style="color: #268bd2;">parse_node</span>(<span style="color: #859900; font-weight: bold;">self</span>, response, node):
+        log.msg(<span style="color: #2aa198;">'Hi, this is a &lt;%s&gt; node!: %s'</span> % (<span style="color: #859900; font-weight: bold;">self</span>.itertag, <span style="color: #2aa198;">''</span>.join(node.extract())))
+
+        <span style="color: #268bd2;">item</span> = TestItem()
+        <span style="color: #268bd2;">item</span>[<span style="color: #2aa198;">'id'</span>] = node.xpath(<span style="color: #2aa198;">'@id'</span>).extract()
+        <span style="color: #268bd2;">item</span>[<span style="color: #2aa198;">'name'</span>] = node.xpath(<span style="color: #2aa198;">'name'</span>).extract()
+        <span style="color: #268bd2;">item</span>[<span style="color: #2aa198;">'description'</span>] = node.xpath(<span style="color: #2aa198;">'description'</span>).extract()
+        <span style="color: #859900; font-weight: bold;">return</span> item
+</pre>
+</div>
+</div>
+</div>
+<div id="orgf9cee0d" class="outline-3">
+<h3 id="orgf9cee0d"><span class="section-number-3">6.6</span> CSVFeedSpider</h3>
+<div class="outline-text-3" id="text-6-6">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">from</span> scrapy <span style="color: #859900; font-weight: bold;">import</span> log
+<span style="color: #859900; font-weight: bold;">from</span> scrapy.contrib.spiders <span style="color: #859900; font-weight: bold;">import</span> CSVFeedSpider
+<span style="color: #859900; font-weight: bold;">from</span> myproject.items <span style="color: #859900; font-weight: bold;">import</span> TestItem
+
+<span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">MySpider</span>(CSVFeedSpider):
+    <span style="color: #268bd2;">name</span> = <span style="color: #2aa198;">'example.com'</span>
+    <span style="color: #268bd2;">allowed_domains</span> = [<span style="color: #2aa198;">'example.com'</span>]
+    <span style="color: #268bd2;">start_urls</span> = [<span style="color: #2aa198;">'http://www.example.com/feed.csv'</span>]
+    <span style="color: #268bd2;">delimiter</span> = <span style="color: #2aa198;">';'</span>
+    <span style="color: #268bd2;">quotechar</span> = <span style="color: #2aa198;">"'"</span>
+    <span style="color: #268bd2;">headers</span> = [<span style="color: #2aa198;">'id'</span>, <span style="color: #2aa198;">'name'</span>, <span style="color: #2aa198;">'description'</span>]
+
+    <span style="color: #859900; font-weight: bold;">def</span> <span style="color: #268bd2;">parse_row</span>(<span style="color: #859900; font-weight: bold;">self</span>, response, row):
+        log.msg(<span style="color: #2aa198;">'Hi, this is a row!: %r'</span> % row)
+
+        <span style="color: #268bd2;">item</span> = TestItem()
+        <span style="color: #268bd2;">item</span>[<span style="color: #2aa198;">'id'</span>] = row[<span style="color: #2aa198;">'id'</span>]
+        <span style="color: #268bd2;">item</span>[<span style="color: #2aa198;">'name'</span>] = row[<span style="color: #2aa198;">'name'</span>]
+        <span style="color: #268bd2;">item</span>[<span style="color: #2aa198;">'description'</span>] = row[<span style="color: #2aa198;">'description'</span>]
+        <span style="color: #859900; font-weight: bold;">return</span> item
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="org44eca2b" class="outline-2">
+<h2 id="org44eca2b"><span class="section-number-2">7</span> 选择器</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+BeautifulSoup,lxml,xpath
+</p>
+</div>
+<div id="org8f16252" class="outline-3">
+<h3 id="org8f16252"><span class="section-number-3">7.1</span> 使用选择器</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+构造选择器
+</p>
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #859900; font-weight: bold;">from</span> scrapy.selector <span style="color: #859900; font-weight: bold;">import</span> Selector
+&gt;&gt;&gt; <span style="color: #859900; font-weight: bold;">from</span> scrapy.http <span style="color: #859900; font-weight: bold;">import</span> HtmlResponse
+</pre>
+</div>
+<p>
+用文字构造
+</p>
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #268bd2;">body</span> = <span style="color: #2aa198;">'&lt;html&gt;&lt;body&gt;&lt;span&gt;good&lt;/span&gt;&lt;/body&gt;&lt;/html&gt;'</span>
+&gt;&gt;&gt; Selector(text=body).xpath(<span style="color: #2aa198;">'//span/text()'</span>).extract()
+</pre>
+</div>
+<p>
+用response构造
+</p>
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #268bd2;">response</span> = HtmlResponse(url=<span style="color: #2aa198;">'http://example.com'</span>, body=body)
+&gt;&gt;&gt; Selector(response=response).xpath(<span style="color: #2aa198;">'//span/text()'</span>).extract()
+</pre>
+</div>
+<p>
+用select属性
+</p>
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; response.selector.xpath(<span style="color: #2aa198;">'//span/text()'</span>).extract()
+</pre>
+</div>
+</div>
+</div>
+<div id="org7d091dd" class="outline-3">
+<h3 id="org7d091dd"><span class="section-number-3">7.2</span> 嵌套选择器</h3>
+</div>
+<div id="org93d49f7" class="outline-3">
+<h3 id="org93d49f7"><span class="section-number-3">7.3</span> 正则表达式</h3>
+<div class="outline-text-3" id="text-7-3">
+<div class="org-src-container">
+<pre class="src src-python">response.xpath(<span style="color: #2aa198;">'//a[contains(@href, "image")]/text()'</span>).re(r<span style="color: #2aa198;">'Name:\s*(.*)'</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="org1d11ade" class="outline-3">
+<h3 id="org1d11ade"><span class="section-number-3">7.4</span> 使用相对路径</h3>
+<div class="outline-text-3" id="text-7-4">
+<p>
+绝对路径以/开始
+</p>
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #268bd2;">divs</span> = response.xpath(<span style="color: #2aa198;">'//div'</span>)
+&gt;&gt;&gt; <span style="color: #859900; font-weight: bold;">for</span> p <span style="color: #859900; font-weight: bold;">in</span> divs.xpath(<span style="color: #2aa198;">'//p'</span>):  <span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">this is wrong - gets all &lt;p&gt; from the whole document</span>
+...     <span style="color: #859900; font-weight: bold;">print</span> p.extract()
+&gt;&gt;&gt; <span style="color: #859900; font-weight: bold;">for</span> p <span style="color: #859900; font-weight: bold;">in</span> divs.xpath(<span style="color: #2aa198;">'.//p'</span>):  <span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">extracts all &lt;p&gt; inside</span>
+...     <span style="color: #859900; font-weight: bold;">print</span> p.extract()
+&gt;&gt;&gt; <span style="color: #859900; font-weight: bold;">for</span> p <span style="color: #859900; font-weight: bold;">in</span> divs.xpath(<span style="color: #2aa198;">'p'</span>):
+...     <span style="color: #859900; font-weight: bold;">print</span> p.extract()
+</pre>
+</div>
+</div>
+</div>
+<div id="orga42f9eb" class="outline-3">
+<h3 id="orga42f9eb"><span class="section-number-3">7.5</span> 使用建议</h3>
+<div class="outline-text-3" id="text-7-5">
+</div><div id="org717c253" class="outline-4">
+<h4 id="org717c253"><span class="section-number-4">7.5.1</span> Using text nodes in a condition</h4>
+<div class="outline-text-4" id="text-7-5-1">
+<p>
+When you need to use the text content as argument to a XPath string function,
+avoid using .//text() and use just . instead.
+</p>
+</div>
+</div>
+<div id="org29a1cd9" class="outline-4">
+<h4 id="org29a1cd9"><span class="section-number-4">7.5.2</span> Beware the difference between //node[1] and (//node)[1]</h4>
+<div class="outline-text-4" id="text-7-5-2">
+<p>
+//node[1] selects all the nodes occurring first under their respective parents
+(//node)[1] selects all the nodes in the document, and then gets only the first of them.
+</p>
+</div>
+</div>
+<div id="org734d9e2" class="outline-4">
+<h4 id="org734d9e2"><span class="section-number-4">7.5.3</span> When querying by class, consider using CSS</h4>
+<div class="outline-text-4" id="text-7-5-3">
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #859900; font-weight: bold;">from</span> scrapy <span style="color: #859900; font-weight: bold;">import</span> Selector
+&gt;&gt;&gt; <span style="color: #268bd2;">sel</span> = Selector(text=<span style="color: #2aa198;">'&lt;div class="hero shout"&gt;&lt;time datetime="2014-07-23 19:00"&gt;Special date&lt;/time&gt;&lt;/div&gt;'</span>)
+&gt;&gt;&gt; sel.css(<span style="color: #2aa198;">'.shout'</span>).xpath(<span style="color: #2aa198;">'./time/@datetime'</span>).extract()
+[u<span style="color: #2aa198;">'2014-07-23 19:00'</span>]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="org1d3c969" class="outline-2">
+<h2 id="org1d3c969"><span class="section-number-2">8</span> Item Loaders</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+Item Loaders提供的是一种灵活，高效的机制，可以更方便的被spider或source format (HTML, XML, etc)扩展，并override更易于维护的、不同的内容分析规则.
+</p>
+</div>
+<div id="org7d0dcfd" class="outline-3">
+<h3 id="org7d0dcfd"><span class="section-number-3">8.1</span> Using Item Loaders to populate items</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2017-05-27 周六 11:15</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
