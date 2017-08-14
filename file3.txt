@@ -1,1 +1,4 @@
 hello file3
+
+hello file3 haha;
+red
