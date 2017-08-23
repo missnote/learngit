@@ -1,0 +1,26 @@
+pip install scrapy  安装
+scrapy bench    测试
+sample:
+
+import scrapy   引入
+class   类定义
+name    spider name
+start_urls  开始路线
+parse   解析函数
+yield scrapy.Request(full_url, callback=self.parse_question)    内解析
+
+ def parse_question(self, response)     函数
+
+ yield ....
+
+ scrapy runspider stackoverflow_spider.py -o top-stackoverflow-questions.json   运行
+
+
+scrapy  显示命令
+scrapy startproject ptoject_name    创建项目
+
+scrapy crawl spider_name    运行项目
+
+scrapy crawl spider_name -o data.json   导出数据
+
+
