@@ -1,0 +1,181 @@
+source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
+set diffexpr=MyDiff()
+function MyDiff()
+  let opt = '-a --binary '
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  let arg1 = v:fname_in
+  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  let arg2 = v:fname_new
+  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  let arg3 = v:fname_out
+  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  if $VIMRUNTIME =~ ' '
+    if &sh =~ '\<cmd'
+      if empty(&shellxquote)
+        let l:shxq_sav = ''
+        set shellxquote&
+      endif
+      let cmd = '"' . $VIMRUNTIME . '\diff"'
+    else
+      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+    endif
+  else
+    let cmd = $VIMRUNTIME . '\diff'
+  endif
+  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
+  if exists('l:shxq_sav')
+    let &shellxquote=l:shxq_sav
+  endif
+endfunction
+
+" ============================================================================= "
+" 基本设置
+set nocompatible
+set magic
+unmap <C-v>
+set title
+set autoread
+set cursorline
+set cursorcolumn
+set shortmess=atI
+set gcr=a:block-blinkon0
+set novisualbell
+set noerrorbells
+set visualbell t_vb=
+set t_vb=
+set tm=500
+set nobomb
+set winaltkeys=no
+set clipboard+=unnamed
+set backspace=2
+set ai!
+set relativenumber
+set autochdir
+set wildmenu
+set nobackup
+set noundofile
+set noswapfile
+winpos 640 270
+"au GUIEnter * simalt ~x
+"nmap <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
+set lines=32 columns=96
+syntax on
+filetype on
+filetype plugin on
+filetype indent on
+
+" 菜单设置
+set guioptions-=m
+set guioptions-=T
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+
+" 文件的编码形式
+set encoding=utf-8
+set termencoding=utf-8
+set fileencoding=utf-8
+set fileencodings=ucs-bom,utf-8,chinese,cp936
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+language messages zh_CN.utf-8
+
+" 显示行列
+set ruler
+set number
+set wrap
+set showcmd
+set showmode
+set showmatch
+set matchtime=2
+
+" movement
+set so=3
+set scrolloff=3
+
+" search
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set history=2000
+
+" tab
+set expandtab
+set smarttab
+
+" 缩进
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set autoindent smartindent shiftround
+
+" 主题
+set background=dark
+colorscheme solarized
+set guifont=consola:h12:cANSI
+
+" 状态栏
+set laststatus=2
+set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
+" ============================================================================= "
+" map映射
+let mapleader=";"
+let g:mapleader=";"
+noremap \ ;
+" buffer遍历快捷键
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
+set hid
+
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+
+nnoremap nw <C-W><C-W>
+nnoremap <Leader>lw <C-W>l
+nnoremap <Leader>hw <C-W>h
+nnoremap <Leader>kw <C-W>k
+nnoremap <Leader>jw <C-W>j
+nnoremap <Leader>cw <C-W>c
+nnoremap <Leader>ow <C-W>o
+nnoremap <Leader>sw <C-W>s
+nnoremap <Leader>vw <C-W>v
+nnoremap <Leader>tw <C-W>T
+cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
+
+nnoremap U <C-r>
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+nnoremap <Leader>tb :tabe
+
+nmap <Leader>lb 0
+nmap <Leader>le $
+nmap <Leader>p "+p
+nmap <Leader>q :q<CR>
+nmap <Leader>w :w<CR>
+nmap <Leader>WQ :wa<CR>:q<CR>
+nmap <Leader>Q :qa!<CR>
+nmap <Leader>pa %
+" *.cpp 和 *.h 间切换
+nmap <Leader>ch :A<CR>
+" 子窗口中显示 *.cpp 或 *.h
+nmap <Leader>sch :AS<CR>
+
+" 设置快捷键将选中文本块复制至系统剪贴板
+vnoremap <Leader>y "+y
+map <Leader>sa ggVG"
+
+
+
+if executable("vimtweak.dll") 
+autocmd guienter * call libcallnr("vimtweak","SetAlpha",222) 
+endif 
