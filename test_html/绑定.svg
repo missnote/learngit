@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>图标/红/绑定</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="图标/红/绑定" stroke="#FD5844" stroke-width="1.5">
+            <g id="Page-1" transform="translate(1.000000, 1.000000)">
+                <path d="M9.9059,5.5399 L13.2679,2.1769 C15.1719,0.2739 18.2849,0.2739 20.1889,2.1769 C22.0919,4.0809 22.0919,7.1939 20.1889,9.0979 L14.7229,14.5619" id="Stroke-1"></path>
+                <path d="M12.4601,16.826 L9.0971,20.188 C7.1941,22.092 4.0801,22.092 2.1771,20.188 C0.2741,18.285 0.2741,15.171 2.1771,13.268 L7.6421,7.803" id="Stroke-3"></path>
+                <path d="M9.1549,13.472 L12.8039,9.823" id="Stroke-5"></path>
+            </g>
+        </g>
+    </g>
+</svg>
