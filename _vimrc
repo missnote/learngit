@@ -1,3 +1,37 @@
+source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
+set diffexpr=MyDiff()
+function MyDiff()
+  let opt = '-a --binary '
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  let arg1 = v:fname_in
+  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  let arg2 = v:fname_new
+  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  let arg3 = v:fname_out
+  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  if $VIMRUNTIME =~ ' '
+    if &sh =~ '\<cmd'
+      if empty(&shellxquote)
+        let l:shxq_sav = ''
+        set shellxquote&
+      endif
+      let cmd = '"' . $VIMRUNTIME . '\diff"'
+    else
+      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+    endif
+  else
+    let cmd = $VIMRUNTIME . '\diff'
+  endif
+  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
+  if exists('l:shxq_sav')
+    let &shellxquote=l:shxq_sav
+  endif
+endfunction
+
 " ============================================================================= "
 " 基本设置
 set nocompatible
@@ -7,6 +41,7 @@ behave mswin
 set magic
 unmap <C-v>
 set title
+set showcmd
 set autoread
 set cursorline
 set cursorcolumn
@@ -64,8 +99,8 @@ set showmatch
 set matchtime=2
 
 " movement
-set so=10
-set scrolloff=10
+set so=3
+set scrolloff=3
 
 " search
 set hlsearch
@@ -77,6 +112,7 @@ set history=2000
 " tab
 set expandtab
 set smarttab
+set shiftround
 
 " 缩进
 set tabstop=4
@@ -148,39 +184,39 @@ map <Leader>sa ggVG"
 filetype off
 set rtp+=$VIM/vimfiles/bundle/vundle/
 call vundle#rc('$VIM/vimfiles/bundle/')
-Bundle 'a.vim'
-Bundle 'gmarik/vundle'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'Mizuchi/STL-Syntax'
-Bundle 'kshenoy/vim-signature'
-Bundle 'scrooloose/nerdtree'
-Bundle 'majutsushi/tagbar'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'tpope/vim-surround'
-Bundle 'uirVeruultisnips'
-Bundle 'honza/vim-snippets'
-Bundle 'scrooloose/syntastic'
-Bundle 'ervandew/supertab'
-Bundle 'Raimondi/delimitMate'
-Bundle 'tpope/vim-markdown'
-"Bundle 'dyng/ctrlsf.vim'
-"Bundle 'AutoComplPop'
-"Bundle 'Shougo/neocomplcache'
-"Bundle 'garbas/vim-snipmate'
-"Bundle 'MarcWeber/vim-addon-mw-utils'
-"Bundle 'tomtom/tlib_vim'
-"Bundle 'sjl/gundo.vim'
-"Bundle 'godlygeek/tabular'
-"Bundle 'nathanaelkane/vim-indent-guides'
-"Bundle 'humiaozuzu/TabBar'
-"Bundle 'mileszs/ack.vim'
-"Bundle 'kien/ctrlp.vim'
-"Bundle 'tpope/vim-fugitive'
-"Bundle 'bronson/vim-trailing-whitespace'
-"Bundle 'nvie/vim-togglemouse'
+Plugin 'a.vim'
+Plugin 'gmarik/vundle'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'Mizuchi/STL-Syntax'
+Plugin 'kshenoy/vim-signature'
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'uirVeruultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'scrooloose/syntastic'
+Plugin 'ervandew/supertab'
+Plugin 'Raimondi/delimitMate'
+Plugin 'tpope/vim-markdown'
+Plugin 'dyng/ctrlsf.vim'
+Plugin 'AutoComplPop'
+Plugin 'Shougo/neocomplcache'
+Plugin 'garbas/vim-snipmate'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'sjl/gundo.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'humiaozuzu/TabBar'
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'nvie/vim-togglemouse'
 Plugin 'iamcco/markdown-preview.vim'
-Bundle 'nelstrom/vim-visual-star-search'
+Plugin 'nelstrom/vim-visual-star-search'
 filetype plugin indent on
 
 let g:Powerline_colorscheme='solarized256'
